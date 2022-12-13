@@ -1,26 +1,26 @@
 package core.basesyntax;
 
 //import jdk.internal.util.ArraysSupport;
+
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 
 public class ArrayList<T> implements List<T> {
 
-
+    //TODO Good practice: enum values and constants better always write  capitalize letters.
     private static final int def_capacity = 10;
     private static final Object[] empty_arraydata = {};
 
-
+    //TODO It better to assign variables in constructor.
     private T[] array = (T[]) new Object[def_capacity];
     private int size;
     private int cursor;
 
-
+    //TODO First should be constructors than public methods and in the end private methods.
     private String errorMsg(int index) {
         return "Index: " + index + ", Size: " + size;
     }
-
 
     private Object[] grow() {
         int oldCapacity = array.length;
